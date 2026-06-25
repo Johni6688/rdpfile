@@ -17,11 +17,11 @@
   startxfce4 &
   sleep 3
 
-  # VNC server (no password = direct open in browser)
+  # VNC server (no password)
   x11vnc -display :1 -nopw -forever -shared -rfbport 5900 &
   sleep 2
 
-  # noVNC — browser access on PORT
+  # noVNC — browser access
   websockify --web=/usr/share/novnc/ $PORT localhost:5900
 
   wait
