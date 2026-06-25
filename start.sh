@@ -33,10 +33,10 @@
          -o /tmp/x11vnc.log
   sleep 2
 
-  # Auto-redirect: root URL seedha desktop khol de
+  # Auto-redirect root URL to desktop
   echo '<html><head><meta http-equiv="refresh" content="0; url=vnc_auto.html"></head><body>Loading desktop...</body></html>' > /usr/share/novnc/index.html
 
-  echo "==> Starting noVNC on port $PORT..."
+  echo "==> noVNC on port $PORT..."
   websockify --web=/usr/share/novnc/ $PORT localhost:5900
 
   wait
